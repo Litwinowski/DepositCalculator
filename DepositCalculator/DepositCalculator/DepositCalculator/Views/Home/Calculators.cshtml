@@ -1,0 +1,78 @@
+﻿@model List<DepositCalculator.Models.Calculator>
+
+@{
+    ViewBag.Title = "Calculators";
+}
+
+<h2>Deposit Calculators</h2>
+
+<p>
+    @if (Request.IsAuthenticated)
+    {
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+    }
+</p>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            InterestRate
+        </th>
+        <th>
+            MinDepositAmount
+        </th>
+        <th>
+            MaxDepositAmount
+        </th>
+        <th>
+            MinDurationInMonths
+        </th>
+        <th>
+            MaxDurationInMonths
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>
+                @item.CalculatorName
+            </td>
+            <td>
+                @item.InterestRate
+            </td>
+            <td>
+                @item.MinDepositAmount
+            </td>
+            <td>
+                @item.MaxDepositAmount
+            <td>
+                @item.MinDurationInMonths
+            <td>
+                @item.MaxDurationInMonths
+            </td>
+            <td>
+                @if (Request.IsAuthenticated)
+                {
+                    @Html.ActionLink("Details", "Details", new { calculatorId = item.ID }, new { @class = "btn btn-default" }) <tt></tt>
+                    @Html.ActionLink("Edit", "Edit", new { calculatorId = item.ID }, new { @class = "btn btn-default" }) <tt></tt>
+                    @Html.ActionLink("Delete", "Delete", new { calculatorId = item.ID }, new { @class = "btn btn-default" }) <tt></tt>
+                }
+            </td>
+        </tr>
+    }
+
+</table>
+

@@ -1,0 +1,68 @@
+﻿@using Microsoft.AspNet.Identity;
+@model DepositCalculator.Models.Calculator
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+
+<div>
+    <h2>Details of @Html.DisplayFor(model => model.CalculatorName)</h2>
+</div>
+
+<div>
+    <h4>Deposit Calculator</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CalculatorName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CalculatorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InterestRate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.InterestRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinDepositAmount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MinDepositAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxDepositAmount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaxDepositAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinDurationInMonths)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MinDurationInMonths)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxDurationInMonths)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaxDurationInMonths)
+        </dd>
+    </dl>
+</div>
+
+
+@Html.ActionLink("Edit", "Edit", new { calculatorId = Model.ID }, new { @class = "btn btn-default" })
+@Html.ActionLink("Back to List", "Calculators", null, new { @class = "btn btn-default" })
+
+@Scripts.Render("~/bundles/jquery")
+

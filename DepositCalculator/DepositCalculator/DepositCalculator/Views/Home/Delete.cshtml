@@ -1,0 +1,66 @@
+﻿@model DepositCalculator.Models.Calculator
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this calculator?</h3>
+<div>
+    <h4>Calculator</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CalculatorName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CalculatorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InterestRate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.InterestRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinDepositAmount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MinDepositAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxDepositAmount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaxDepositAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinDurationInMonths)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MinDurationInMonths)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxDurationInMonths)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaxDurationInMonths)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" />
+            @Html.ActionLink("Back to List", "Calculators", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>
